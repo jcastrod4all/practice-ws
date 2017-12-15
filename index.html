@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+   <head>
+
+      <title>jQuery.mmenu playground</title>
+      <meta charset="utf-8" />
+      <link type="text/css" href="./css/app.css" rel="stylesheet" />
+      <link rel='stylesheet prefetch' href='http://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css'>
+      <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
+
+      <!-- Include jQuery.mmenu .css files -->
+      <link type="text/css" href="./js/mmenu/jquery.mmenu.all.css" rel="stylesheet" />
+   </head>
+   <body>
+
+      <!-- The page -->
+<!--
+      <div class="page">
+         <div class="header">
+            <a href="#menu">Demo</a>
+            Demo
+         </div>
+         <div class="content">
+            <p><strong>This is a demo.</strong><br />
+               Click the menu icon to open the menu.</p>
+         </div>
+      </div
+-->
+
+      <!-- The menu -->
+      <nav id="menu">
+         <ul>
+           <div class="wrapper">
+            <form class="form-signin">       
+              <h2 class="form-signin-heading">Please login</h2>
+              <input type="text" class="form-control" name="username" placeholder="Email Address" required="" autofocus="" />
+              <input type="password" class="form-control" name="password" placeholder="Password" required=""/>
+              <label class="checkbox">
+                <input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"> Remember me
+              </label>
+              <button class="btn btn-lg btn-block btn-login" type="submit">Login</button>
+            </form>
+          </div>
+            <li><a href="#"></a>
+               <ul>
+                  <div class="wrapper">
+                  <form class="form-signin">       
+                    <h2 class="form-signin-heading">Upload your photo</h2>
+                    <input type="text" class="form-control" name="title" placeholder="Title" required="" autofocus="" />
+                    <textarea rows="5" class="form-control" name="body" placeholder="Description"></textarea>
+                    <label for="photo">
+                     <input type="file" accept="image/*" capture="camera"  name="photo"/>
+                    </label>
+                    <button class="btn btn-lg btn-block btn-login" type="submit">Upload !</button>
+                  </form>
+                </div>
+             </ul>
+            </li>
+         </ul>
+      </nav>
+      <!-- Include jQuery and the jQuery.mmenu .js files -->
+      <script type="text/javascript" src="./js/jquery.js"></script>
+      <script type="text/javascript" src="./js/mmenu/jquery.mmenu.all.js"></script>
+
+      <!-- Fire the plugin onDocumentReady -->
+      <script type="text/javascript">
+         jQuery(document).ready(function( $ ) {
+            $("#menu").mmenu({
+               "extensions": [
+                  "fx-menu-zoom",
+                  "fx-panels-zoom",
+                  "fullscreen",
+                  "border-none",
+                  "theme-dark"
+               ],
+               "navbars": [
+                  {
+                     "position": "top",
+                  },
+                  {
+                     "position": "bottom",
+                     "content": [
+                        "<a class='fa fa-envelope' href='#/'></a>",
+                        "<a class='fa fa-twitter' href='#/'></a>",
+                        "<a class='fa fa-facebook' href='#/'></a>"
+                     ]
+                  }
+               ],
+            });
+            var API = $("#menu").data( "mmenu" );
+            API.open();
+            });
+      </script>
+       <script type="text/javascript" src="./js/app.js"></script>
+   </body>
+</html>
